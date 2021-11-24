@@ -117,15 +117,15 @@
 
 ### 初始化Sector数据库信息
 - extern/storage-sealing/garbage.go
-
+```mermaid
 graph TD;
-    PledgeSector--create_sector-->id1[(t_sector_info)];
-    PledgeSector--create_expiration_sector-->id2[(t_sector_expiration_info)];
-    PledgeSector==>pledgeSectorWithCache;
-    pledgeSectorWithCache-.multiminer_CommpCache_is_null-.->id8(return err);
-    pledgeSectorWithCache==multiminer_CommpCache_not_null==>CommpCacheLoad==>id9(return abi_PieceInfo);
+    PledgeSector -- create_sector --> id1[(t_sector_info)];
+    PledgeSector -- create_expiration_sector --> id2[(t_sector_expiration_info)];
+    PledgeSector ==> pledgeSectorWithCache;
+    pledgeSectorWithCache -. multiminer_CommpCache_is_null -.-> id8(return err);
+    pledgeSectorWithCache == multiminer_CommpCache_not_null ==> CommpCacheLoad ==> id9(return abi_PieceInfo);
 
-
+```
 
 - - -
 ## IPFSUNION密封流程详细介绍
